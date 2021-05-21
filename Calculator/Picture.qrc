@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/kisspng-dollar-sign-signo-money-currency-ticket-5b06836d1cd821.8365145615271535171182.jpg</file>
+        <file>img/dollar.png</file>
+        <file>img/back.jpg</file>
+        <file>img/change.jpg</file>
+        <file>img/two-arrows.png</file>
+        <file>img/button.png</file>
+        <file>img/bank_1.jpg</file>
+    </qresource>
+</RCC>

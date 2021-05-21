@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>738</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Bank</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/resources/img/bank_1.jpg</normalon>
+   </iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background-color: rgb(40, 43, 51)
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QMainWindow { 
+background-color: #95EF8F }
+</string>
+   </property>
+   <widget class="QPushButton" name="push_button_change_curr">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>100</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {background-color: rgb(255, 86, 104);
+	 border-width: 1px; 
+	 border-style: solid;
+	border: 1px solid rgb(0, 0, 0);
+ 	 border-radius: 10px;
+ 	 color: black;
+	font-family: Monaco;
+ }
+
+QPushButton:pressed {
+	background-color: #8BBBA6;
+ 	border-width: 2px; 
+ 	border-style: solid;
+  	border-radius: 8px;
+	color: black;
+}
+
+QPushButton:hover
+{ 
+	background-color: rgb(250, 250, 250);
+	border-width: 2px; 
+ 	border-style: solid;
+  	border-radius: 10px;
+	color: green;
+	font-family: Monaco;
+}</string>
+    </property>
+    <property name="text">
+     <string>Смена Валюты</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_fourth_var">
+    <property name="geometry">
+     <rect>
+      <x>389</x>
+      <y>370</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>На год (Ежедневно)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_third_var">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>370</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>На год (Ежедневно на полную тысячу)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_second_var">
+    <property name="geometry">
+     <rect>
+      <x>389</x>
+      <y>270</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>На год (Проценты каждый месяц)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="push_button_first_var">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>301</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>На год (Проценты по окочанию года)</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier New</family>
+      <pointsize>18</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Введите данные:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>10</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string>QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: balck;
+	font-size: 14px;
+	font:large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Picture.qrc">:/resources/img/two-arrows.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="proc">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>100</y>
+      <width>31</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+font-family: Monaco;
+}</string>
+    </property>
+    <property name="text">
+     <string>%</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="enter_pro">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>100</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+ background-color: rgb(255, 86, 104); 
+border-width: 1px; 
+ border-style: solid;  
+border-radius: 4px; 
+color: black;
+}
+
+
+186, 203, 233</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rub_us">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>80</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+font-family: Monaco;
+}</string>
+    </property>
+    <property name="text">
+     <string>Руб.</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="enter_rub_us">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>160</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+ background-color: rgb(255, 86, 104); 
+border-width: 1px; 
+ border-style: solid;  
+border-radius: 4px; 
+color: black;
+}
+
+
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="kop_cnt">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>148</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>15</pointsize>
+      <weight>50</weight>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+font-family: Monaco;
+}</string>
+    </property>
+    <property name="text">
+     <string>Коп.</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="enter_kop_cnt">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>160</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+ background-color: rgb(255, 86, 104); 
+border-width: 1px; 
+ border-style: solid;  
+border-radius: 4px; 
+color: black;
+}
+
+
+186, 203, 233</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="Picture.qrc"/>
+ </resources>
+ <connections/>
+</ui>

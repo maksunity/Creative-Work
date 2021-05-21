@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1056</width>
+    <height>764</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="sq">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>620</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier New</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Маршрут:</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>811</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGraphicsView {
+
+background-color: rgba(255, 255, 255, 150);
+
+}
+
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>670</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier New</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Расстояние:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>670</y>
+      <width>361</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+	font-family: Monaco;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="route">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>630</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+	font-family: Monaco;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="fromto">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>460</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="res">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>620</y>
+      <width>241</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Ответ</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clear">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>20</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Очистить поле</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_city">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>110</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Добавить город</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="create">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>200</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monaco</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    padding:4px;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #3873d9;
+    background-color: rgb(0, 204, 255);
+	font-family: Monaco;
+ }
+
+QPushButton:hover{
+	border-color: rgb(47, 48, 46);
+	background-color: rgb rgb(170, 255, 255);
+	color: white;
+	font-size: 14px;
+	font: large;
+	border-radius: 10px;
+    border: 1px solid #3873d9;
+	font-family: Monaco;
+font-style: italic;
+font-weight: 900;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Создать новую карту</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="city">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>280</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Corbel</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+ background-color: rgb(165, 249, 163); 
+border-width: 1px; 
+ border-style: solid;  
+border-radius: 4px; 
+color: black;
+}
+
+
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>-430</x>
+      <y>-10</y>
+      <width>1831</width>
+      <height>791</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="Pic.qrc">:/img/zemlia-mir-materiki-kontinenty-chernyi-fon.jpg</pixmap>
+    </property>
+   </widget>
+   <zorder>label_3</zorder>
+   <zorder>sq</zorder>
+   <zorder>graphicsView</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>route</zorder>
+   <zorder>fromto</zorder>
+   <zorder>res</zorder>
+   <zorder>clear</zorder>
+   <zorder>add_city</zorder>
+   <zorder>create</zorder>
+   <zorder>city</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1056</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="Pic.qrc"/>
+ </resources>
+ <connections/>
+</ui>
