@@ -35,7 +35,7 @@ void city::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     painter->setBrush(color);
     painter->drawEllipse(pos_x, pos_y, 50, 50);
     QFontMetrics fm(painter->font());
-    int tw = fm.horizontalAdvance(name); //fm.width
+    int tw = fm.horizontalAdvance(name);
     painter->drawText(pos_x + 25 - tw/2, pos_y + 30, name);
 }
 

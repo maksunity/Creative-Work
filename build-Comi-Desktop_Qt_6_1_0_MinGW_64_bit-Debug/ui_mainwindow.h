@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
@@ -46,11 +47,14 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1056, 764);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/img/kvkghforv9kxb9zntjdkqi7xdlw.jpeg"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         sq = new QLabel(centralwidget);
         sq->setObjectName(QString::fromUtf8("sq"));
-        sq->setGeometry(QRect(10, 620, 101, 51));
+        sq->setGeometry(QRect(10, 620, 251, 51));
         QFont font;
         font.setFamilies({QString::fromUtf8("Courier New")});
         font.setPointSize(15);
@@ -89,7 +93,7 @@ public:
 "}"));
         route = new QLabel(centralwidget);
         route->setObjectName(QString::fromUtf8("route"));
-        route->setGeometry(QRect(110, 630, 421, 31));
+        route->setGeometry(QRect(260, 630, 421, 31));
         route->setFont(font1);
         route->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "color: white;\n"
@@ -217,7 +221,7 @@ public:
         font3.setPointSize(18);
         city->setFont(font3);
         city->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-" background-color: rgb(165, 249, 163); \n"
+" background-color: rgb(172, 237, 255); \n"
 "border-width: 1px; \n"
 " border-style: solid;  \n"
 "border-radius: 4px; \n"
@@ -261,8 +265,8 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        sq->setText(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\200\321\210\321\200\321\203\321\202:", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Comivoyager", nullptr));
+        sq->setText(QCoreApplication::translate("MainWindow", "\320\236\320\277\321\202\320\270\320\274\320\260\320\273\321\214\320\275\321\213\320\271 \320\274\320\260\321\200\321\210\321\200\321\203\321\202:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265:", nullptr));
         label->setText(QString());
         route->setText(QString());

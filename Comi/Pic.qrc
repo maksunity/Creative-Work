@@ -2,5 +2,6 @@
     <qresource prefix="/img"/>
     <qresource prefix="/">
         <file>img/zemlia-mir-materiki-kontinenty-chernyi-fon.jpg</file>
+        <file>img/kvkghforv9kxb9zntjdkqi7xdlw.jpeg</file>
     </qresource>
 </RCC>

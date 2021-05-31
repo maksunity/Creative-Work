@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../img/zemlia-mir-materiki-kontinenty-chernyi-fon.jpg</file>
+    </qresource>
+</RCC>

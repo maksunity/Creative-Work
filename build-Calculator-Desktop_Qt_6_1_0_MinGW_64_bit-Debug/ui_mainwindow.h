@@ -243,7 +243,7 @@ public:
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/two-arrows.png")));
         proc = new QLabel(centralwidget);
         proc->setObjectName(QString::fromUtf8("proc"));
-        proc->setGeometry(QRect(370, 100, 31, 51));
+        proc->setGeometry(QRect(390, 100, 31, 51));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Monaco")});
         font4.setPointSize(15);
@@ -256,12 +256,12 @@ public:
 "}"));
         enter_pro = new QLineEdit(centralwidget);
         enter_pro->setObjectName(QString::fromUtf8("enter_pro"));
-        enter_pro->setGeometry(QRect(310, 100, 50, 50));
+        enter_pro->setGeometry(QRect(310, 100, 71, 50));
         QFont font5;
         font5.setPointSize(15);
         enter_pro->setFont(font5);
         enter_pro->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-" background-color: rgb(255, 86, 104); \n"
+" background-color: rgb(205, 255, 197); \n"
 "border-width: 1px; \n"
 " border-style: solid;  \n"
 "border-radius: 4px; \n"
@@ -283,7 +283,7 @@ public:
         enter_rub_us->setGeometry(QRect(40, 80, 160, 40));
         enter_rub_us->setFont(font5);
         enter_rub_us->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-" background-color: rgb(255, 86, 104); \n"
+" background-color: rgb(205, 255, 197); \n"
 "border-width: 1px; \n"
 " border-style: solid;  \n"
 "border-radius: 4px; \n"
@@ -305,7 +305,7 @@ public:
         enter_kop_cnt->setGeometry(QRect(40, 150, 160, 40));
         enter_kop_cnt->setFont(font5);
         enter_kop_cnt->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-" background-color: rgb(255, 86, 104); \n"
+" background-color: rgb(205, 255, 197); \n"
 "border-width: 1px; \n"
 " border-style: solid;  \n"
 "border-radius: 4px; \n"
@@ -313,7 +313,8 @@ public:
 "}\n"
 "\n"
 "\n"
-"186, 203, 233"));
+" rgb(255, 86, 104)\n"
+""));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

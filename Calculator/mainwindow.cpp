@@ -9,6 +9,7 @@
 #include <QIntValidator>
 #include <QMainWindow>
 #include <QLineEdit>
+#include <QRegularExpressionValidator>
 
 
 MainWindow::MainWindow(QWidget *parent):
@@ -21,8 +22,10 @@ MainWindow::MainWindow(QWidget *parent):
     connect(ui->push_button_second_var,SIGNAL(clicked()),this,SLOT(operation_2()));
     connect(ui->push_button_third_var,SIGNAL(clicked()),this,SLOT(operation_3()));
     connect(ui->push_button_fourth_var,SIGNAL(clicked()),this,SLOT(operation_4()));
-    ui->enter_rub_us->setValidator( new QIntValidator);
-    ui->enter_kop_cnt->setValidator( new QIntValidator);
+    ui->enter_rub_us->setValidator( new QRegularExpressionValidator(QRegularExpression("[1-9][0-9]{1,11}\\.[0-9]{1,10}|[0-9]\\.[0-9]{1,10}")));
+    ui->enter_kop_cnt->setValidator( new QRegularExpressionValidator(QRegularExpression("[1-9][0-9]{1,1}\\.[0-9]{1,2}|[0-9]\\.[0-9]{1,2}")));
+    ui->enter_pro->setValidator( new QRegularExpressionValidator(QRegularExpression("[1-9][0-9]{1,2}\\.[0-9]{1,2}|[0-9]\\.[0-9]{1,2}")));
+
 
 }
 
@@ -55,7 +58,7 @@ void MainWindow::operation_1()
     sum = big + ((little-count*100)/100);
     proc = (ui->enter_pro->text()).toDouble() /100 + 1;
     res = sum*proc;
-    txt = QString::number(res,'g',15);
+    txt = QString::number(res,'g',10);
     QMessageBox::information(this, "Сумма, которую Вы получите", QString("Сумма: %1").arg(txt));
     } else
     {
@@ -91,7 +94,7 @@ void MainWindow::operation_2()
     for (int i = 2; i<=12; i++){
         res = res*proc;
     }
-    txt = QString::number(res,'g',15);
+    txt = QString::number(res,'g',10);
     QMessageBox::information(this, "Сумма, которую Вы получите", QString("Сумма: %1").arg(txt));
     }
     else
@@ -133,7 +136,7 @@ void MainWindow::operation_3()
         big = sum;
         res = sum;
     }
-    txt = QString::number(res,'g',15);
+    txt = QString::number(res,'g',10);
     QMessageBox::information(this, "Сумма, которую Вы получите", QString("Сумма: %1").arg(txt));
 }
         else
@@ -172,7 +175,7 @@ void MainWindow::operation_4()
     for (int i = 2; i<=365; i++){
         res = res*proc;
     }
-    txt = QString::number(res,'g',25);
+    txt = QString::number(res,'g',12);
     QMessageBox::information(this, "Сумма, которую Вы получите", QString("Сумма: %1").arg(txt));
     }
     else

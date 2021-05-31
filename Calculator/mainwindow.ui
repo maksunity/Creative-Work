@@ -391,7 +391,7 @@ QPushButton:hover{
    <widget class="QLabel" name="proc">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>390</x>
       <y>100</y>
       <width>31</width>
       <height>51</height>
@@ -421,7 +421,7 @@ font-family: Monaco;
      <rect>
       <x>310</x>
       <y>100</y>
-      <width>50</width>
+      <width>71</width>
       <height>50</height>
      </rect>
     </property>
@@ -432,7 +432,7 @@ font-family: Monaco;
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
- background-color: rgb(255, 86, 104); 
+ background-color: rgb(205, 255, 197); 
 border-width: 1px; 
  border-style: solid;  
 border-radius: 4px; 
@@ -487,7 +487,7 @@ font-family: Monaco;
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
- background-color: rgb(255, 86, 104); 
+ background-color: rgb(205, 255, 197); 
 border-width: 1px; 
  border-style: solid;  
 border-radius: 4px; 
@@ -542,7 +542,7 @@ font-family: Monaco;
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
- background-color: rgb(255, 86, 104); 
+ background-color: rgb(205, 255, 197); 
 border-width: 1px; 
  border-style: solid;  
 border-radius: 4px; 
@@ -550,7 +550,8 @@ color: black;
 }
 
 
-186, 203, 233</string>
+ rgb(255, 86, 104)
+</string>
     </property>
    </widget>
   </widget>

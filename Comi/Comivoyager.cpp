@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow :: create()
 {
     int n = ui->city->text().toInt();
-    if(n>1)
+    if(n>2)
     {
        ui->city->clear();
        for (int i = 0; i < n; i++)
@@ -72,7 +72,6 @@ void MainWindow :: create()
     else
     QMessageBox::warning(this, "Ошибка", "Введите корректное количество городов");
 }
-
 
 void MainWindow::clear() {
     scene -> clear();
@@ -144,7 +143,6 @@ void MainWindow::add_city() {
     }
    }
 }
-
 
 void reductCol(vector<vector<double>> & arr) {
       for (int i = 0; i < arr.size(); i++) {
@@ -251,20 +249,17 @@ int getLength(vector<vector<double>> matrix, vector<Way> solution) {
       return len;
 }
 
-
-
-
 QString getSolutionPath(vector<Way> solution) {
      QString result = "";
         Way current = solution[0];
-        result += QString::number(current.from + 1) + " -> " + QString::number(current.to + 1);
+        result += QString::number(current.from + 1) + "->" + QString::number(current.to + 1);
       int count = 0;
       while (count < solution.size()) {
            for (int i = 0; i < solution.size(); i++) {
                 Way next = solution[i];
                 if (current.to == next.from) {
                      count++;
-                         result += " -> " + QString::number(next.to + 1);
+                         result += "->" + QString::number(next.to + 1);
                 current = next;
                      break;
             }
@@ -281,7 +276,6 @@ QString getSolutionPath(vector<Way> solution) {
       }
      return result;
 }
-
 
 void MainWindow :: calculate()
 {
@@ -301,7 +295,6 @@ void MainWindow :: calculate()
   ui->label->setText(QString::number(sum));
     }
 }
-
 
 MainWindow::~MainWindow()
 {

@@ -39,8 +39,8 @@ void road::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
         angle = -angle;
     }
     qreal del_x, del_y;
-    del_x = 15 * sin(angle);
-    del_y = 15 * cos(angle);
+    del_x = 8 * sin(angle);
+    del_y = 8 * cos(angle);
     QLineF line = QLineF(fx - del_x, fy - del_y, sx - del_x, sy - del_y);
     QLineF vector = line.unitVector();
     vector.setLength(20);
@@ -48,11 +48,11 @@ void road::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     vector.setLength(line.length() - 20);
     QPointF point2 = vector.p2();
     painter->drawLine(QLineF(point1, point2));
-    vector.setLength(line.length() - 30);
+    vector.setLength(line.length() - 35);
     QLineF arrow_1 = QLineF(point2, vector.p2());
     QLineF arrow_2 = QLineF(point2, vector.p2());
-    arrow_1.setAngle(arrow_1.angle() - 30);
-    arrow_2.setAngle(arrow_2.angle() + 30);
+    arrow_1.setAngle(arrow_1.angle() - 20);
+    arrow_2.setAngle(arrow_2.angle() + 20);
     painter->drawLine(arrow_1);
     painter->drawLine(arrow_2);
     QFontMetrics fm(painter->font());
