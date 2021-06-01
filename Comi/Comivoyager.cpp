@@ -1,9 +1,10 @@
 #include "Comivoyager.h"
-#include "Roads.h"
+#include "Drawline_city.h"
 #include "ui_mainwindow.h"
 #include <vector>
 #include <QMessageBox>
 #include <QLineEdit>
+#include <QLabel>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -32,6 +33,8 @@ void MainWindow::clear()
     cities.clear();
     result.clear();
     ui->city->setText(" ");
+    ui->route->setText(" ");
+    ui->label->setText(" ");
 }
 
 void MainWindow::new_map()
@@ -86,7 +89,6 @@ void MainWindow::new_map()
     else
     QMessageBox::warning(this, "Ошибка", "Введите корректное количество городов");
 }
-
 
 void MainWindow::add_city()
 {
