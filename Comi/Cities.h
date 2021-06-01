@@ -9,19 +9,22 @@
 
 class city : public QGraphicsItem
 {
+
 public:
     city(QGraphicsItem* parent = nullptr);
     city(QString, int, int, QGraphicsItem* parent = nullptr);
     city(const city&);
     QString name;
-    friend bool operator== (const city&, const city&);
-private:
+    friend bool operator == (const city&, const city&);
+
+protected:
+    void paint(QPainter *p, const QStyleOptionGraphicsItem *s, QWidget *w = nullptr) override;
+    QRectF boundingRect() const override;
+
+private: 
     int pos_x;
     int pos_y;
     QColor color;
-protected:
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
-    QRectF boundingRect() const override;
 };
 
 

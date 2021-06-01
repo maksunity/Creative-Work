@@ -11,15 +11,15 @@ CONFIG += c++11
 SOURCES += \
     Cities.cpp \
     Comivoyager.cpp \
-    Graph.cpp \
-    Roads.cpp \
+    Drawline_city.cpp \
+    Mouse_event.cpp \
     main.cpp
 
 HEADERS += \
     Cities.h \
     Comivoyager.h \
-    Graph.h \
-    Roads.h
+    Drawline_city.h \
+    Mouse_event.h
 
 FORMS += \
     mainwindow.ui

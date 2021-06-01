@@ -10,7 +10,8 @@ city::city(QGraphicsItem* parent): QGraphicsItem(parent) {
     setFlag(QGraphicsItem::ItemIsSelectable);
 }
 
-city::city(QString n, int x, int y, QGraphicsItem* parent) : QGraphicsItem(parent) {
+city::city(QString n, int x, int y, QGraphicsItem* parent) : QGraphicsItem(parent)
+{
     name = n;
     pos_x = x;
     pos_y = y;
@@ -31,7 +32,8 @@ QRectF city::boundingRect() const {
     return QRectF(pos_x, pos_y, 50, 50);
 }
 
-void city::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+void city::paint(QPainter *painter, const QStyleOptionGraphicsItem *s, QWidget *w)
+{
     painter->setBrush(color);
     painter->drawEllipse(pos_x, pos_y, 50, 50);
     QFontMetrics fm(painter->font());
@@ -39,6 +41,7 @@ void city::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
     painter->drawText(pos_x + 25 - tw/2, pos_y + 30, name);
 }
 
-bool operator== (const city &c1, const city &c2) {
+bool operator == (const city &c1, const city &c2)
+{
     return c1.name == c2.name;
 }

@@ -3,8 +3,8 @@
 #include "ui_mainwindow.h"
 #include <vector>
 #include <QMessageBox>
+#include <QLineEdit>
 
-using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,21 +13,35 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     scene = new myGraphicsScene(ui->graphicsView);
     ui->graphicsView->setScene(scene);
-    connect(ui->add_city, &QPushButton::released, this, &MainWindow::add_city);
-    connect(ui->clear, &QPushButton::released, this, &MainWindow::clear);
     connect(ui->res,SIGNAL(clicked()),this,SLOT(calculate()));
-    connect(ui->create,SIGNAL(clicked()),this,SLOT(create()));
+    connect(ui->create,SIGNAL(clicked()),this,SLOT(new_map()));
+    connect(ui->add_city, SIGNAL(clicked()), this,SLOT(add_city()));
+    connect(ui->clear, SIGNAL(clicked()), this, SLOT(clear()));
 }
 
-void MainWindow :: create()
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::clear()
+{
+    scene -> clear();
+    scene->QGraphicsScene::update();
+    cities.clear();
+    result.clear();
+    ui->city->setText(" ");
+}
+
+void MainWindow::new_map()
 {
     int n = ui->city->text().toInt();
     if(n>2)
     {
-       ui->city->clear();
        for (int i = 0; i < n; i++)
            {
-           city *new_city = new city(QString::number(i + 1), 0, i);
+           city *new_city = new city(QString::number(i+1), 0, i);
            for (auto i : cities){
                if (*new_city == *i) {
                    delete new_city;
@@ -73,21 +87,17 @@ void MainWindow :: create()
     QMessageBox::warning(this, "Ошибка", "Введите корректное количество городов");
 }
 
-void MainWindow::clear() {
-    scene -> clear();
-    scene->QGraphicsScene::update();
-    cities.clear();
-    result.clear();
-}
 
-void MainWindow::add_city() {
+void MainWindow::add_city()
+{
     if(!result.empty())
     {
     int k = cities.size() - 1;
     QString q = QString::number((cities[k]->name).toInt() + 1);
     city *new_city = new city(q, 0, 0);
     for (auto i : cities){
-        if (*new_city == *i) {
+        if (*new_city == *i)
+        {
             delete new_city;
             return;
         }
@@ -144,15 +154,20 @@ void MainWindow::add_city() {
    }
 }
 
-void reductCol(vector<vector<double>> & arr) {
-      for (int i = 0; i < arr.size(); i++) {
+
+void red_col(vector<vector<double>> & arr)
+{
+      for (int i = 0; i < arr.size(); i++)
+      {
            int min = INT_MAX;
-          for (int j = 0; j < arr[0].size(); j++) {
+          for (int j = 0; j < arr[0].size(); j++)
+          {
                 if (min > arr[i][j] && arr[i][j] >= 0)
                      min = arr[i][j];
           }
            if (min != INT_MAX) {
-               for (int j = 0; j < arr[0].size(); j++) {
+               for (int j = 0; j < arr[0].size(); j++)
+               {
                    if (arr[i][j] >= 0)
                   arr[i][j] -= min;
                }
@@ -160,15 +175,19 @@ void reductCol(vector<vector<double>> & arr) {
       }
 }
 
-void reductRow(vector<vector<double>> & arr) {
-    for (int i = 0; i < arr.size(); i++) {
+void red_line(vector<vector<double>> & arr)
+{
+    for (int i = 0; i < arr.size(); i++)
+    {
         int min = INT_MAX;
-        for (int j = 0; j < arr[0].size(); j++) {
+        for (int j = 0; j < arr[0].size(); j++)
+        {
             if (min > arr[j][i] && arr[j][i] >= 0)
                 min = arr[j][i];
         }
         if (min != INT_MAX) {
-            for (int j = 0; j < arr[0].size(); j++) {
+            for (int j = 0; j < arr[0].size(); j++)
+            {
                 if (arr[j][i] >= 0)
                     arr[j][i] -= min;
             }
@@ -176,7 +195,7 @@ void reductRow(vector<vector<double>> & arr) {
     }
 }
 
-int findMinCol(vector<vector<double>>& arr, int i, int j)
+int find_min_col(vector<vector<double>>& arr, int i, int j)
 {
     int min = 100000;
     for (int k=0; k<arr.size(); k++)
@@ -188,7 +207,8 @@ int findMinCol(vector<vector<double>>& arr, int i, int j)
     }
     return min;
 }
-int findMinRow(vector<vector<double>>& arr, int i, int j)
+
+int find_min_line(vector<vector<double>>& arr, int i, int j)
 {
     int min = 100000;
     for (int k=0; k<arr.size(); k++)
@@ -207,23 +227,26 @@ struct Way
     int to;
 };
 
-Way FindWay(vector<vector<double>>& arr) {
-    int max=-1;
-    Way way{ 0, 0 };
-
-    for (int i = 0; i < arr.size(); i++) {
-        for (int j = 0; j < arr[0].size(); j++) {
+Way find_way(vector<vector<double>>& arr)
+{
+    int max= -1;
+    Way way{0, 0};
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = 0; j < arr[0].size(); j++)
+        {
             if (arr[i][j] == 0) {
-                int t = findMinCol(arr, i,j) + findMinRow(arr, i,j);
-                if (t > max) {
-                    max = t;
+                int f = find_min_col(arr, i,j) + find_min_line(arr, i,j);
+                if (f > max)
+                {
+                    max = f;
                     way.from = i;
                     way.to = j;
                 }
             }
         }
     }
-    arr[way.to][way.from]=-1;
+    arr[way.to][way.from]= -1;
     for (int i = 0; i < arr.size(); i++) {
         arr[way.from][i] = -1;
         arr[i][way.to] = -1;
@@ -231,16 +254,17 @@ Way FindWay(vector<vector<double>>& arr) {
     return way;
 }
 
-int getLength(vector<vector<double>> matrix, vector<Way> solution) {
+int get_length(vector<vector<double>> mat, vector<Way> ans)
+{
      int len = 0;
-      Way current = solution[0];
+      Way current = ans[0];
       int count = 0;
-      while (count < solution.size()) {
-           for (int i = 0; i < solution.size(); i++) {
-                Way next = solution[i];
+      while (count < ans.size()) {
+           for (int i = 0; i < ans.size(); i++) {
+                Way next = ans[i];
                 if (current.to == next.from) {
                      count++;
-                     len += matrix[current.from][current.to];
+                     len += mat[current.from][current.to];
                      current = next;
                    break;
                 }
@@ -249,14 +273,15 @@ int getLength(vector<vector<double>> matrix, vector<Way> solution) {
       return len;
 }
 
-QString getSolutionPath(vector<Way> solution) {
+QString get_ans(vector<Way> ans)
+{
      QString result = "";
-        Way current = solution[0];
+        Way current = ans[0];
         result += QString::number(current.from + 1) + "->" + QString::number(current.to + 1);
       int count = 0;
-      while (count < solution.size()) {
-           for (int i = 0; i < solution.size(); i++) {
-                Way next = solution[i];
+      while (count < ans.size()) {
+           for (int i = 0; i < ans.size(); i++) {
+                Way next = ans[i];
                 if (current.to == next.from) {
                      count++;
                          result += "->" + QString::number(next.to + 1);
@@ -267,11 +292,11 @@ QString getSolutionPath(vector<Way> solution) {
         }
 
     }
-      if(solution.size() > 4)
+      if(ans.size() > 4)
      result.chop(3);
       else
       {
-        QString  r = result.right(result.size() - 3);
+        QString r = result.right(result.size() - 3);
         result = r;
       }
      return result;
@@ -285,19 +310,14 @@ void MainWindow :: calculate()
  vector<Way> r;
       int i = 0;
       while (i != matrix.size()) {
-      reductCol(matrix);
-      reductRow(matrix);
-      r.push_back(FindWay(matrix));
+      red_col(matrix);
+      red_line(matrix);
+      r.push_back(find_way(matrix));
       i++;
       }
-  int sum = getLength(result, r);
-  ui->route->setText(getSolutionPath(r));
+  int sum = get_length(result, r);
+  ui->route->setText(get_ans(r));
   ui->label->setText(QString::number(sum));
     }
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
 }
 
