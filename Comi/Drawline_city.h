@@ -18,7 +18,7 @@ public:
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *s, QWidget *w = nullptr) override;
     QRectF boundingRect() const override;
-    QString double_to_str(double);
+    QString str(double);
 };
 
 #endif // DRAWLINE_CITY_H

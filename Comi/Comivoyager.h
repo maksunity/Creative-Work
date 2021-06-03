@@ -24,10 +24,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void calculate();
-    void add_city();
-    void new_map();
+    void calc();
     void clear();
+    void new_map();
+    void add_city();
 
 private:
     Ui::MainWindow *ui;

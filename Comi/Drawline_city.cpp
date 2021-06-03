@@ -18,7 +18,7 @@ road::road(const road& r){
     setFlag(QGraphicsItem::ItemIsFocusable);
 }
 
-QString road::double_to_str(double i){
+QString road::str(double i){
     QString result = QString::number(i);
    return result;
 }
@@ -64,7 +64,7 @@ void road::paint(QPainter *painter, const QStyleOptionGraphicsItem *s, QWidget *
     painter->drawLine(arrow_1);
     painter->drawLine(arrow_2);
     QFontMetrics fm(painter->font());
-    QString ln = double_to_str(length);
+    QString ln = str(length);
     int q = fm.horizontalAdvance(ln);
     qreal rotate_angle = -line.angle();
     QPointF center = line.center();

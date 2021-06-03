@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     scene = new myGraphicsScene(ui->graphicsView);
     ui->graphicsView->setScene(scene);
-    connect(ui->res,SIGNAL(clicked()),this,SLOT(calculate()));
+    connect(ui->res,SIGNAL(clicked()),this,SLOT(calc()));
     connect(ui->create,SIGNAL(clicked()),this,SLOT(new_map()));
     connect(ui->add_city, SIGNAL(clicked()), this,SLOT(add_city()));
     connect(ui->clear, SIGNAL(clicked()), this, SLOT(clear()));
@@ -94,8 +94,8 @@ void MainWindow::add_city()
 {
     if(!result.empty())
     {
-    int k = cities.size() - 1;
-    QString q = QString::number((cities[k]->name).toInt() + 1);
+    int key = cities.size() - 1;
+    QString q = QString::number((cities[key]->name).toInt() + 1);
     city *new_city = new city(q, 0, 0);
     for (auto i : cities){
         if (*new_city == *i)
@@ -114,24 +114,24 @@ void MainWindow::add_city()
               t.push_back(-1);
          else
              {
-              int in;
-              in = rand()/1000 + 1;
-              t.push_back(in);
+              int weight;
+              weight = rand()/1000 + 1;
+              t.push_back(weight);
              }
         }
     result.push_back(t);
     for (int j = 0; j < result.size()-1; j++)
     {
-        int in;
-        in = rand()/1000 + 1;
-        result[j].push_back(in);
+        int weight;
+        weight = rand()/1000 + 1;
+        result[j].push_back(weight);
     }
-    k = cities.size() - 1;
-    city* k1 =cities[k];
-    int q1 = (cities[k]->name).toInt();
+    key = cities.size() - 1;
+    city* k1 =cities[key];
+    int q1 = (cities[key]->name).toInt();
     for(int j = 0;j<cities.size();j++)
     {
-        if(k!=j)
+        if(key!=j)
         {
     city* kj = cities[j];
     int qj = (cities[j]->name).toInt();
@@ -143,7 +143,7 @@ void MainWindow::add_city()
     }
     for(int j = 0;j<cities.size();j++)
     {
-        if(k!=j)
+        if(key!=j)
         {
     city* kj = cities[j];
     int qj = (cities[j]->name).toInt();
@@ -238,10 +238,10 @@ Way find_way(vector<vector<double>>& arr)
         for (int j = 0; j < arr[0].size(); j++)
         {
             if (arr[i][j] == 0) {
-                int f = find_min_col(arr, i,j) + find_min_line(arr, i,j);
-                if (f > max)
+                int lenght = find_min_col(arr, i,j) + find_min_line(arr, i,j);
+                if (lenght > max)
                 {
-                    max = f;
+                    max = lenght;
                     way.from = i;
                     way.to = j;
                 }
@@ -256,7 +256,7 @@ Way find_way(vector<vector<double>>& arr)
     return way;
 }
 
-int get_length(vector<vector<double>> mat, vector<Way> ans)
+int get_length(vector<vector<double>> arr, vector<Way> ans)
 {
      int len = 0;
       Way current = ans[0];
@@ -266,7 +266,7 @@ int get_length(vector<vector<double>> mat, vector<Way> ans)
                 Way next = ans[i];
                 if (current.to == next.from) {
                      count++;
-                     len += mat[current.from][current.to];
+                     len += arr[current.from][current.to];
                      current = next;
                    break;
                 }
@@ -304,7 +304,7 @@ QString get_ans(vector<Way> ans)
      return result;
 }
 
-void MainWindow :: calculate()
+void MainWindow :: calc()
 {
     if(!result.empty())
     {

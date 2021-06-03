@@ -7,7 +7,6 @@ city::city(QGraphicsItem* parent): QGraphicsItem(parent) {
     color = QColor(255, 255, 255);
     setFlag(QGraphicsItem::ItemIsMovable);
     setFlag(QGraphicsItem::ItemIsFocusable);
-    setFlag(QGraphicsItem::ItemIsSelectable);
 }
 
 city::city(QString n, int x, int y, QGraphicsItem* parent) : QGraphicsItem(parent)
